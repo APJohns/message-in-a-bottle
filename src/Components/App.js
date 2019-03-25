@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import base from "../base";
 
+import Message from "./Message";
+
 class App extends Component {
 	messageFormRef = React.createRef();
 	messageRef = React.createRef();
@@ -21,22 +23,6 @@ class App extends Component {
 		base.removeBinding(this.ref);
 	}
 
-	/* 	componentDidUpdate(prevProps, prevState) {
-		if (
-			!sessionStorage.getItem("message") ||
-			sessionStorage.getItem("message") === "undefined"
-		) {
-			const messages = { ...this.state.messages };
-			const keys = Object.keys(messages);
-			const key = keys[Math.floor(Math.random() * keys.length)];
-			const message = this.state.messages[key];
-			console.log(keys, key, message);
-			sessionStorage.setItem("message", message);
-			messages[key] = null;
-			this.setState({ messages });
-		}
-	} */
-
 	getMessage = () => {
 		if (
 			!sessionStorage.getItem("message") ||
@@ -48,7 +34,10 @@ class App extends Component {
 			const message = this.state.messages[key];
 			sessionStorage.setItem("message", message);
 			messages[key] = null;
-			this.setState({ messages });
+			this.setState({
+				messages,
+				message
+			});
 		}
 	};
 
@@ -64,10 +53,10 @@ class App extends Component {
 		return (
 			<div className="App">
 				<h1>Hello!</h1>
-				{!this.state.message && (
-					<button onClick={this.getMessage}>Get Message</button>
-				)}
-				{this.state.message && <p>{this.state.message}</p>}
+				<Message
+					message={this.state.message}
+					getMessage={this.getMessage}
+				/>
 				<h2>Write your own message!</h2>
 				<form ref={this.messageFormRef} onSubmit={this.handleMessage}>
 					<textarea ref={this.messageRef} />
