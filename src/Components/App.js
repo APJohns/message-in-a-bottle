@@ -51,18 +51,24 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
-				<h1>Hello!</h1>
+			<main>
+				<header>
+					<h1>Message in a Bottle</h1>
+				</header>
 				<Message
 					message={this.state.message}
 					getMessage={this.getMessage}
 				/>
-				<h2>Write your own message!</h2>
-				<form ref={this.messageFormRef} onSubmit={this.handleMessage}>
+				<form
+					ref={this.messageFormRef}
+					onSubmit={this.handleMessage}
+					className="newMessage"
+				>
+					<h2>Write your own message!</h2>
 					<textarea ref={this.messageRef} />
 					<button type="submit">Cast Away!</button>
 				</form>
-			</div>
+			</main>
 		);
 	}
 }
