@@ -72,7 +72,11 @@ section.message {
 }
 
 .bottle {
+	background: none;
+	border: none;
 	position: absolute;
+	padding: 0;
+	cursor: pointer;
 	left: 5%;
 	bottom: 60%;
 	width: 20px;
@@ -81,6 +85,10 @@ section.message {
 
 	img {
 		width: 100%;
+		&:hover {
+			animation: shake 0.3s linear infinite alternate;
+			filter: drop-shadow(5px 4px 2px rgba(0, 0, 0, 0.2));
+		}
 	}
 }
 
@@ -114,5 +122,17 @@ input {
 		left: calc(50% - 22px);
 		filter: blur(0);
 		opacity: 1;
+	}
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(0deg);
+	}
+	/* 50% {
+		transform: rotate(-10deg);
+	} */
+	100% {
+		transform: rotate(-10deg);
 	}
 }

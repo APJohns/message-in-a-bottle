@@ -6,9 +6,9 @@ class Message extends Component {
 	render() {
 		return (
 			<section className="message">
-				<div className="bottle">
+				<button className="bottle">
 					<img src={bottle} alt="bottle" />
-				</div>
+				</button>
 				{!this.props.message && (
 					<button onClick={this.props.getMessage}>Get Message</button>
 				)}
