@@ -6,6 +6,11 @@ body {
 	background-position: bottom middle; */
 }
 
+h1,
+h2 {
+	font-family: "Chelsea Market", cursive;
+}
+
 main {
 	min-height: 100vh;
 	display: flex;
@@ -14,6 +19,7 @@ main {
 
 header {
 	position: relative;
+	color: #fafafa;
 	background-color: #93c9e4;
 	background-image: url("../clouds.png");
 	background-size: 100% 40%;
@@ -42,6 +48,8 @@ section.message {
 	background-position: bottom;
 	background-repeat: repeat-x;
 
+	font-family: "Kalam", cursive;
+
 	&::after {
 		content: "";
 		position: absolute;
@@ -69,4 +77,9 @@ section.message {
 	img {
 		width: 100%;
 	}
+}
+
+button,
+input {
+	font-family: "Kalam", cursive;
 }
