@@ -69,6 +69,31 @@ header {
 	background-image: url("../sand.png");
 	padding-top: 100px;
 	padding-bottom: 10px;
+
+	textarea {
+		display: block;
+		margin: auto;
+		padding: 10px;
+		width: 50%;
+		min-width: 300px;
+		height: 7rem;
+		border: none;
+		background: none;
+		background-image: url("../paper.png");
+		box-sizing: border-box;
+		resize: vertical;
+	}
+
+	button {
+		background: none;
+		border: none;
+		padding: 5px;
+		cursor: pointer;
+
+		&:hover {
+			color: #fafafa;
+		}
+	}
 }
 
 .bottle {
@@ -93,8 +118,11 @@ header {
 }
 
 button,
-input {
+input,
+textarea {
 	font-family: "Kalam", cursive;
+	font-size: 1rem;
+	color: #333;
 }
 
 .msg {
@@ -102,7 +130,7 @@ input {
 	top: 50px;
 	left: 5%;
 	right: 5%;
-	background-image: url("../paper.png");
+	background-image: url("../paper_old.png");
 	height: 50vh;
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 	padding: 50px;

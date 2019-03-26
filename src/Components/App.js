@@ -66,7 +66,7 @@ class App extends Component {
 				>
 					<h2>Write your own message!</h2>
 					<textarea ref={this.messageRef} />
-					<button type="submit">Cast Away!</button>
+					<button type="submit">Cast Away! &#8921;</button>
 				</form>
 			</main>
 		);
