@@ -67,12 +67,17 @@ section.message {
 	flex: 1;
 	background-color: #ebdfcd;
 	background-image: url("../sand.png");
-	padding-top: 60px;
-	padding-bottom: 20px;
+	padding-top: 100px;
+	padding-bottom: 10px;
 }
 
 .bottle {
+	position: absolute;
+	left: 5%;
+	bottom: 60%;
 	width: 20px;
+	animation: float-in 5s ease-in-out forwards;
+	z-index: 20;
 
 	img {
 		width: 100%;
@@ -82,4 +87,32 @@ section.message {
 button,
 input {
 	font-family: "Kalam", cursive;
+}
+
+@keyframes float-in {
+	0% {
+		width: 15px;
+		transform: translateY(0px);
+		filter: blur(1px);
+		opacity: 0.9;
+	}
+	20% {
+		transform: translateY(-15px);
+	}
+	40% {
+		transform: translateY(0px);
+	}
+	60% {
+		transform: translateY(-30px);
+	}
+	80% {
+		transform: translateY(0px);
+	}
+	100% {
+		width: 45px;
+		bottom: -60px;
+		left: calc(50% - 22px);
+		filter: blur(0);
+		opacity: 1;
+	}
 }
