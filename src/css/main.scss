@@ -97,16 +97,16 @@ input {
 		opacity: 0.9;
 	}
 	20% {
-		transform: translateY(-15px);
+		transform: translateY(-15px) rotate(-10deg);
 	}
 	40% {
-		transform: translateY(0px);
+		transform: translateY(0px) rotate(0deg);
 	}
 	60% {
-		transform: translateY(-30px);
+		transform: translateY(-30px) rotate(10deg);
 	}
 	80% {
-		transform: translateY(0px);
+		transform: translateY(0px) rotate(0deg);
 	}
 	100% {
 		width: 45px;
