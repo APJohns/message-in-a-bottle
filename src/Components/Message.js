@@ -8,6 +8,14 @@ class Message extends Component {
 		showMessage: false
 	};
 
+	componentDidMount() {
+		document.addEventListener("keyup", e => {
+			if (e.key === "Escape" && this.state.showMessage) {
+				this.toggleMessage();
+			}
+		});
+	}
+
 	handleMessage = () => {
 		this.props.getMessage();
 		this.toggleMessage();
