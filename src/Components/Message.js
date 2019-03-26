@@ -8,6 +8,11 @@ class Message extends Component {
 		showMessage: false
 	};
 
+	handleMessage = () => {
+		this.props.getMessage();
+		this.toggleMessage();
+	};
+
 	toggleMessage = () => {
 		this.setState({
 			showMessage: !this.state.showMessage
@@ -17,12 +22,9 @@ class Message extends Component {
 	render() {
 		return (
 			<section className="message-container">
-				<button className="bottle" onClick={this.toggleMessage}>
+				<button className="bottle" onClick={this.handleMessage}>
 					<img src={bottle} alt="bottle" />
 				</button>
-				{!this.props.message && (
-					<button onClick={this.props.getMessage}>Get Message</button>
-				)}
 				<TransitionGroup component="div" className="message">
 					{this.state.showMessage && (
 						<CSSTransition
