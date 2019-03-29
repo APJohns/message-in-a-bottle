@@ -23,21 +23,43 @@ class App extends Component {
 		base.removeBinding(this.ref);
 	}
 
-	getMessage = () => {
+	setMessage = (messages, keys) => {
+		const key = keys[Math.floor(Math.random() * keys.length)];
+		const message = this.state.messages[key];
+		sessionStorage.setItem("message", message);
+		messages[key] = null;
+		this.setState({
+			messages,
+			message
+		});
+	};
+
+	getMessage = async () => {
 		if (
 			!sessionStorage.getItem("message") ||
 			sessionStorage.getItem("message") === "undefined"
 		) {
-			const messages = { ...this.state.messages };
-			const keys = Object.keys(messages);
-			const key = keys[Math.floor(Math.random() * keys.length)];
-			const message = this.state.messages[key];
-			sessionStorage.setItem("message", message);
-			messages[key] = null;
-			this.setState({
-				messages,
-				message
-			});
+			let messages = { ...this.state.messages };
+			let keys = Object.keys(messages);
+			if (keys.length === 0) {
+				await this.setState({
+					messages: {
+						message1553625843800: "Its really nice out here in MA",
+						message1553872161801:
+							"We got attacked by the others again. And there's this strange smoke monster terrorizing us whenever we try to go into the jungle.",
+						message1553872195578:
+							"Wiiiiiilllllssssooooooooooooon!!!! 🏐",
+						message1553872351778:
+							'We found this hatch in the middle of the jungle. When we managed to bust in, there were these tapes from some group called the Dharma Initiative. Weird stuff. Anyway, back to typing in the same sequence of numbers or "the world will end."',
+						message1553872371852: "4, 8, 15, 16, 23, 42"
+					}
+				});
+				messages = { ...this.state.messages };
+				keys = Object.keys(messages);
+				this.setMessage(messages, keys);
+			} else {
+				this.setMessage(messages, keys);
+			}
 		}
 	};
 
@@ -50,6 +72,7 @@ class App extends Component {
 	};
 
 	render() {
+		console.log(this.state);
 		return (
 			<main>
 				<header>
