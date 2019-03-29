@@ -56,7 +56,7 @@ class App extends Component {
 					<h1>Message in a Bottle</h1>
 					<details>
 						<summary>Learn More</summary>
-						<p class="learn-more">
+						<p className="learn-more">
 							Enjoy your randomly selected message from our list
 							of submitted messages! Yours is unique, no one else
 							will see it. Each message, when read, gets removed

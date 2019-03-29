@@ -158,6 +158,15 @@ summary {
 	z-index: 30;
 	text-align: left;
 	box-sizing: border-box;
+
+	button {
+		background: none;
+		border: none;
+		position: absolute;
+		top: 0;
+		right: 7px;
+		font-size: 1.7rem;
+	}
 }
 
 .msg-enter {

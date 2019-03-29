@@ -39,7 +39,12 @@ class Message extends Component {
 							classNames="msg"
 							timeout={{ enter: 500, exit: 500 }}
 						>
-							<p className="msg">{this.props.message}</p>
+							<p className="msg">
+								<button onClick={this.toggleMessage}>
+									&times;
+								</button>
+								{this.props.message}
+							</p>
 						</CSSTransition>
 					)}
 				</TransitionGroup>
