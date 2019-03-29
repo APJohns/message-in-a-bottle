@@ -67,15 +67,14 @@ header {
 	flex: 1;
 	background-color: #ebdfcd;
 	background-image: url("../sand.png");
-	padding-top: 70px;
-	padding-bottom: 10px;
+	padding: 70px 5% 10px 5%;
 
 	textarea {
 		display: block;
 		margin: auto;
 		padding: 10px;
 		width: 50%;
-		min-width: 300px;
+		min-width: 250px;
 		height: 7rem;
 		border: none;
 		background: none;
@@ -150,9 +149,9 @@ summary {
 	left: 5%;
 	right: 5%;
 	background-image: url("../paper_old.png");
-	height: 50vh;
+	min-height: 50vh;
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-	padding: 50px;
+	padding: 50px 5%;
 	z-index: 30;
 	text-align: left;
 	box-sizing: border-box;
@@ -228,5 +227,11 @@ summary {
 	} */
 	100% {
 		transform: rotate(-10deg);
+	}
+}
+
+@media screen and (max-height: 700px) {
+	main {
+		height: 125vh;
 	}
 }
