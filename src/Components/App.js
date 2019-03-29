@@ -54,6 +54,17 @@ class App extends Component {
 			<main>
 				<header>
 					<h1>Message in a Bottle</h1>
+					<details>
+						<summary>Learn More</summary>
+						<p class="learn-more">
+							Enjoy your randomly selected message from our list
+							of submitted messages! Yours is unique, no one else
+							will see it. Each message, when read, gets removed
+							from the list. You can keep your message until you
+							close your browser. Spread the positivity! Send a
+							message of your own!
+						</p>
+					</details>
 				</header>
 				<Message
 					message={this.state.message}

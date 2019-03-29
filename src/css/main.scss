@@ -4,11 +4,11 @@ body {
 	font-size: 18px;
 	text-align: center;
 	color: #333;
+	font-family: "Chelsea Market", cursive;
 }
 
-h1,
-h2 {
-	font-family: "Chelsea Market", cursive;
+h1 {
+	margin: 15px 0 0 0;
 }
 
 main {
@@ -123,6 +123,27 @@ textarea {
 	font-family: "Kalam", cursive;
 	font-size: 1rem;
 	color: #333;
+}
+
+.learn-more {
+	position: absolute;
+	margin: 0 10%;
+	padding: 10px 4%;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+details .learn-more {
+	opacity: 0;
+	transition: all 0.2s ease;
+}
+
+details[open] .learn-more {
+	opacity: 1;
+	transition: all 0.2s ease;
+}
+
+summary {
+	cursor: pointer;
 }
 
 .msg {
